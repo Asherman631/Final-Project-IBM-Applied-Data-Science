@@ -57,7 +57,7 @@ def get_pie(entered_site):
   if entered_site == 'All Sites':
     piedata = spacex_df[['Launch Site', 'class']]
     piedat = piedata.groupby(['Launch Site']).sum()
-    pie_fig = px.pie(piedat, values="class", names=piedat.index, title='Total successful launches by site')
+    pie_fig = px.pie(piedat, values='class', names=piedat.index, title='Total successful launches by site')
     return pie_fig
   else:
     piedata = spacex_df[spacex_df['Launch Site']==entered_site]
